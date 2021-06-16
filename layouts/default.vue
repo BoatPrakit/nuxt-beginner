@@ -1,12 +1,6 @@
 <template>
   <div>
-    <div class="py-5 bg-gray-500 flex justify-between items-center">
-      <div>Navbar</div>
-      <div class="flex w-1/4 justify-around">
-        <nuxt-link to="/">Home</nuxt-link>
-        <nuxt-link to="/about">About</nuxt-link>
-      </div>
-    </div>
+    <Navbar />
     <Nuxt />
   </div>
 </template>

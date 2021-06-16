@@ -21,8 +21,9 @@
           GitHub
         </a>
       </div>
+      <button @click="$store.dispatch('photos/randomName')">Click Me</button>
+      <p>{{ $store.state.photos.photoName }}</p>
       <nuxt-content :document="hello"></nuxt-content>
-      <nuxt-content :document="hello1"></nuxt-content>
     </div>
   </div>
 </template>
@@ -31,8 +32,7 @@
 export default {
   async asyncData(context) {
     const hello = await context.$content('posts/helloworld').fetch();
-    const hello1 = await context.$content('posts/helloworld').fetch();
-    return { hello, hello1 };
+    return { hello };
   },
 };
 </script>
