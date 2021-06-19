@@ -14,8 +14,9 @@
 
 <script>
 export default {
+  middleware: ['auth'],
   async asyncData({ $axios }) {
-    const photos = await $axios.$get('/v2/list?limit=20');
+    const photos = await $axios.$get('https://picsum.photos/v2/list?limit=5');
     return { photos };
   },
 };

@@ -7,7 +7,9 @@
 <script>
 export default {
   async asyncData({ $axios, params }) {
-    const photo = await $axios.$get(`/id/${params.id}/info`);
+    const photo = await $axios.$get(
+      `https://picsum.photos/id/${params.id}/info`
+    );
     return { photo };
   },
 };

@@ -35,13 +35,35 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     '@nuxt/content',
+    '@nuxtjs/auth',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'https://picsum.photos',
+    baseURL: 'http://localhost:5000',
+    withCredentials: true,
   },
-
+  auth: {
+    strategies: {
+      local: {
+        user: {
+          property: 'user',
+        },
+        token: {
+          property: 'token',
+        },
+        endpoints: {
+          login: { url: '/login', method: 'post' },
+          user: { url: '/me', method: 'get' },
+          logout: false,
+        },
+      },
+      redirect: {
+        login: '/login',
+        logout: '/',
+      },
+    },
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 };
