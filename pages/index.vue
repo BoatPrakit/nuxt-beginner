@@ -49,6 +49,11 @@ export default {
         },
         { hid: 'og:title', property: 'og:title', content: 'Hello Nuxt' },
         {
+          hid: 'og:site_name',
+          property: 'og:site_name',
+          content: 'Nuxt Jub Jub',
+        },
+        {
           hid: 'og:image',
           property: 'og:image',
           content: 'https://boatprakit.github.io/images/me.png',
