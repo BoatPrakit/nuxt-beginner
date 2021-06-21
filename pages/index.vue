@@ -24,15 +24,26 @@
       <button @click="$store.dispatch('photos/randomName')">Click Me</button>
       <p>{{ $store.state.photos.photoName }}</p>
       <nuxt-content :document="hello"></nuxt-content>
+      <p>{{ $store.state.message }}</p>
+      <button @click="testDispatch">Test Dispatch Vuex</button>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  middleware: ['changestate'],
   async asyncData(context) {
     const hello = await context.$content('posts/helloworld').fetch();
     return { hello };
+  },
+  methods: {
+    testDispatch() {
+      this.$store.dispatch(
+        'assignMessage',
+        'changed message from "nothing" at middleware'
+      );
+    },
   },
 };
 </script>

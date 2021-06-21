@@ -1,5 +1,9 @@
 export default {
   target: 'static',
+  // target: 'server' used for ssr
+  // mode: 'universal',  default value
+  // mode: 'spa', -> use ssr: false is better
+  // Single page application not good for seo
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'hello-nuxt',
@@ -13,7 +17,7 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
-
+  serverMiddleware: ['~/api/index.js'],
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
@@ -41,7 +45,7 @@ export default {
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: 'http://localhost:5000',
+    baseURL: 'http://localhost:3000',
     withCredentials: true,
   },
   auth: {
@@ -54,8 +58,8 @@ export default {
           property: 'token',
         },
         endpoints: {
-          login: { url: '/login', method: 'post' },
-          user: { url: '/me', method: 'get' },
+          login: { url: '/api/login', method: 'post' },
+          user: { url: '/api/me', method: 'get' },
           logout: false,
         },
       },
