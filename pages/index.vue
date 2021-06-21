@@ -37,6 +37,25 @@ export default {
     const hello = await context.$content('posts/helloworld').fetch();
     return { hello };
   },
+  head() {
+    return {
+      title: 'hello-nuxt',
+      meta: [
+        { hid: 'description', name: 'description', content: 'Index of Nuxtjs' },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: 'Index of Nuxtjs',
+        },
+        { hid: 'og:title', property: 'og:title', content: 'Hello Nuxt' },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: 'https://boatprakit.github.io/images/me.png',
+        },
+      ],
+    };
+  },
   methods: {
     testDispatch() {
       this.$store.dispatch(
