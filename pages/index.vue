@@ -31,6 +31,7 @@
         <input id="name" name="name" type="text" />
         <label for="lastname">LastName: </label>
         <input id="lastname" name="lastname" type="text" />
+        <button type="submit">Submit</button>
       </form>
     </div>
   </div>
