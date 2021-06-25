@@ -1,5 +1,9 @@
 # hello-nuxt
 
+## Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ccd6271d-1564-49d8-b9fe-3cb4329ddbcd/deploy-status)](https://app.netlify.com/sites/distracted-cori-4d79f4/deploys)
+
 ## Build Setup
 
 ```bash
