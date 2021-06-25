@@ -26,6 +26,12 @@
       <nuxt-content :document="hello"></nuxt-content>
       <p>{{ $store.state.message }}</p>
       <button @click="testDispatch">Test Dispatch Vuex</button>
+      <form netlify>
+        <label for="name">Name: </label>
+        <input id="name" name="name" type="text" />
+        <label for="lastname">LastName: </label>
+        <input id="lastname" name="lastname" type="text" />
+      </form>
     </div>
   </div>
 </template>

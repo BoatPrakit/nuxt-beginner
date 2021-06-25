@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="login">
+  <form @submit.prevent="login" netlify>
     <input v-model="email" type="email" />
     <input v-model="password" type="password" />
     <button type="submit">login</button>
